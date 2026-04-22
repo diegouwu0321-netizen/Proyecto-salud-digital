@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Archivo Clínico | Salud Digital</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="CSS/styles.css">
+    <style>
+        input, textarea { width: 100%; padding: 12px; margin: 10px 0 20px 0; border: 1px solid #ccc; border-radius: 8px; box-sizing: border-box; }
+        .nota-informativa { background: #fff3cd; padding: 15px; border-radius: 8px; margin-bottom: 30px; border-left: 5px solid #ffc107; font-size: 16px; }
+    </style>
+</head>
+<body>
+    <nav class="sidebar" id="sidebar">
+        <div class="cerrar-btn" onclick="toggleMenu()">&times;</div>
+        <ul>
+            <li><a href="index.html">Inicio / Historia</a></li>
+            <li><a href="servicios.html">Servicios</a></li>
+            <li><a href="medicos.html">Nuestros Médicos</a></li>
+            <li><a href="archivo.html"><b>Archivo Clínico</b></a></li>
+            <li><a href="citas.html">Agendar Cita</a></li>
+        </ul>
+    </nav>
+
+    <header class="top-nav">
+        <div class="menu-btn" onclick="toggleMenu()">&#9776;</div>
+        <div class="logo">SALUD<b>DIGITAL</b></div>
+    </header>
+
+    <main class="main-content">
+        <h1>Generación de Expediente Clínico</h1>
+        
+        <div class="nota-informativa">
+            <i class="fas fa-exclamation-circle"></i> <b>Nota del Sistema:</b> Este apartado es únicamente con fines informativos y de recreación académica. No se guardarán datos reales en servidores externos.
+        </div>
+
+        <div class="section-text" style="background: white; padding: 30px; border-radius: 15px; box-shadow: 0 5px 15px rgba(0,0,0,0.1);">
+            <form onsubmit="alert('Generando archivo PDF simulado... Espere un momento.'); return false;">
+                <label>Nombre Completo del Paciente:</label>
+                <input type="text" required placeholder="Tal como aparece en su identificación oficial">
+                
+                <label>Número de Seguridad Social / ID:</label>
+                <input type="number" required placeholder="0000000000">
+                
+                <label>Antecedentes Heredofamiliares:</label>
+                <textarea style="height: 120px;" placeholder="Describa antecedentes de diabetes, hipertensión u otros..."></textarea>
+                
+                <button type="submit" style="background: var(--verde-primario); color:white; border:none; padding:20px; width:100%; border-radius:50px; cursor:pointer; font-size:18px; font-weight:bold;">
+                    <i class="fas fa-file-pdf"></i> Generar Expediente (Simulación PDF)
+                </button>
+            </form>
+        </div>
+    </main>
+
+    <script>function toggleMenu() { document.getElementById('sidebar').classList.toggle('active'); }</script>
+</body>
+</html>

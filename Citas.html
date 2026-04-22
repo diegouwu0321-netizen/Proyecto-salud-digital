@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Agendar Cita | Salud Digital</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="CSS/styles.css">
+    <style>
+        /* Estilos específicos para esta página que no estaban en el CSS global */
+        .form-container {
+            display: none; /* Oculto inicialmente */
+            background: #fff;
+            padding: 30px;
+            border-radius: 15px;
+            border: 2px solid var(--verde-primario);
+            margin-top: 20px;
+            animation: fadeIn 0.5s ease;
+        }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(-10px); } to { opacity: 1; transform: translateY(0); } }
+        
+        .btn-desplegar {
+            background: var(--verde-primario);
+            color: white;
+            padding: 20px;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            width: 100%;
+            font-size: 22px;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+        .btn-desplegar:hover { background: var(--azul-oscuro); transform: scale(1.02); }
+        
+        input, select { width: 100%; padding: 12px; margin: 10px 0 20px 0; border: 1px solid #ccc; border-radius: 8px; box-sizing: border-box; }
+        .grid-forms { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; }
+        @media (max-width: 768px) { .grid-forms { grid-template-columns: 1fr; } }
+    </style>
+</head>
+<body>
+    <nav class="sidebar" id="sidebar">
+        <div class="cerrar-btn" onclick="toggleMenu()">&times;</div>
+        <ul>
+            <li><a href="index.html">Inicio / Historia</a></li>
+            <li><a href="servicios.html">Servicios</a></li>
+            <li><a href="medicos.html">Nuestros Médicos</a></li>
+            <li><a href="archivo.html">Archivo Clínico</a></li>
+            <li><a href="citas.html"><b>Agendar Cita</b></a></li>
+        </ul>
+    </nav>
+
+    <header class="top-nav">
+        <div class="menu-btn" onclick="toggleMenu()">&#9776;</div>
+        <div class="logo">SALUD<b>DIGITAL</b></div>
+    </header>
+
+    <main class="main-content">
+        <h1>Gestión de Citas Médicas</h1>
+        <p>Utiliza nuestro sistema digital para programar tus visitas o consultar el estatus de tus estudios.</p>
+
+        <button class="btn-desplegar" onclick="toggleCitas()">
+            <i class="fas fa-calendar-plus"></i> Presiona aquí para agendar o consultar
+        </button>
+
+        <div id="areaCitas" class="form-container">
+            <div class="grid-forms">
+                <div>
+                    <h3 style="color: var(--verde-primario);">Nueva Cita (MÉTODO POST)</h3>
+                    <form action="#" method="POST" onsubmit="alert('Datos enviados por POST al servidor'); return false;">
+                        <label>Especialidad:</label>
+                        <select name="especialidad" required>
+                            <option>Laboratorio Clínico</option>
+                            <option>Cardiología</option>
+                            <option>Pediatría</option>
+                            <option>Rayos X</option>
+                        </select>
+                        <label>Fecha Sugerida:</label>
+                        <input type="date" name="fecha" required>
+                        <button type="submit" style="background: var(--verde-primario); color:white; border:none; padding:15px; width:100%; border-radius:8px; cursor:pointer;">Agendar vía POST</button>
+                    </form>
+                </div>
+
+                <div style="border-left: 1px solid #eee; padding-left: 20px;">
+                    <h3 style="color: #666;">Consultar Estatus (MÉTODO GET)</h3>
+                    <form action="#" method="GET" onsubmit="alert('Buscando folio vía GET...'); return false;">
+                        <label>Número de Folio:</label>
+                        <input type="text" name="folio" placeholder="Ej: 45892" required>
+                        <button type="submit" style="background: #666; color:white; border:none; padding:15px; width:100%; border-radius:8px; cursor:pointer;">Consultar vía GET</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script>
+        function toggleMenu() { document.getElementById('sidebar').classList.toggle('active'); }
+        
+        function toggleCitas() {
+            const area = document.getElementById('areaCitas');
+            area.style.display = (area.style.display === 'block') ? 'none' : 'block';
+            if(area.style.display === 'block') window.scrollBy(0, 300);
+        }
+    </script>
+</body>
+</html>

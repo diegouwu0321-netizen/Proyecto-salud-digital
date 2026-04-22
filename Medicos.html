@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Nuestros Médicos</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="CSS/styles.css">
+</head>
+<body>
+    <nav class="sidebar" id="sidebar">
+        <div class="cerrar-btn" onclick="toggleMenu()">&times;</div>
+        <ul>
+            <li><a href="index.html">Inicio / Historia</a></li>
+            <li><a href="servicios.html">Servicios</a></li>
+            <li><a href="medicos.html"><b>Nuestros Médicos</b></a></li>
+            <li><a href="archivo.html">Archivo Clínico</a></li>
+            <li><a href="citas.html">Agendar Cita</a></li>
+        </ul>
+    </nav>
+
+    <header class="top-nav">
+        <div class="menu-btn" onclick="toggleMenu()">&#9776;</div>
+        <div class="logo">SALUD<b>DIGITAL</b></div>
+    </header>
+
+    <main class="main-content">
+        <h1>Nuestros Especialistas</h1>
+        <div class="card-doctor">
+            <i class="fas fa-user-md" style="font-size: 70px; color: var(--verde-primario);"></i>
+            <div>
+                <h3>Dr. Armando Casas</h3>
+                <p><b>Especialidad:</b> Cardiología Intervencionista</p>
+                <p>Experto en prevención de riesgos cardiovasculares con 20 años de trayectoria.</p>
+            </div>
+        </div>
+        <div class="card-doctor">
+            <i class="fas fa-user-nurse" style="font-size: 70px; color: var(--verde-primario);"></i>
+            <div>
+                <h3>Dra. Elena Nito</h3>
+                <p><b>Especialidad:</b> Pediatría y Neonatología</p>
+                <p>Dedicada al cuidado integral y desarrollo de los más pequeños de la casa.</p>
+            </div>
+        </div>
+    </main>
+    <script>function toggleMenu() { document.getElementById('sidebar').classList.toggle('active'); }</script>
+</body>
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Nuestros Servicios</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="CSS/styles.css">
+</head>
+<body>
+    <nav class="sidebar" id="sidebar">
+        <div class="cerrar-btn" onclick="toggleMenu()">&times;</div>
+        <ul>
+            <li><a href="index.html">Inicio / Historia</a></li>
+            <li><a href="servicios.html"><b>Servicios</b></a></li>
+            <li><a href="medicos.html">Nuestros Médicos</a></li>
+            <li><a href="archivo.html">Archivo Clínico</a></li>
+            <li><a href="citas.html">Agendar Cita</a></li>
+        </ul>
+    </nav>
+
+    <header class="top-nav">
+        <div class="menu-btn" onclick="toggleMenu()">&#9776;</div>
+        <div class="logo">SALUD<b>DIGITAL</b></div>
+    </header>
+
+    <main class="main-content">
+        <h1>Servicios Médicos de Vanguardia</h1>
+        
+        <div class="carrusel" style="height: 400px;">
+            <div class="carrusel-track" id="trackServicios">
+                <div class="slide"><img src="https://images.unsplash.com/photo-1581594693702-fbdc51b2763b?auto=format&fit=crop&w=1200&q=80"></div>
+                <div class="slide"><img src="https://images.unsplash.com/photo-1516549655169-df83a0774514?auto=format&fit=crop&w=1200&q=80"></div>
+                <div class="slide"><img src="https://images.unsplash.com/photo-1579154204601-01588f351e67?auto=format&fit=crop&w=1200&q=80"></div>
+            </div>
+        </div>
+
+        <div class="services-grid">
+            <div class="service-item"><i class="fas fa-flask"></i><h3>Laboratorio</h3><p>Análisis clínicos completos.</p></div>
+            <div class="service-item"><i class="fas fa-bone"></i><h3>Rayos X</h3><p>Radiografías digitales.</p></div>
+            <div class="service-item"><i class="fas fa-baby"></i><h3>Ultrasonido</h3><p>Estudios especializados.</p></div>
+        </div>
+    </main>
+
+    <script>
+        function toggleMenu() { document.getElementById('sidebar').classList.toggle('active'); }
+        let step = 0;
+        setInterval(() => {
+            step = (step >= 2) ? 0 : step + 1;
+            document.getElementById('trackServicios').style.transform = `translateX(-${step * 100}%)`;
+        }, 3000);
+    </script>
+</body>
+</html>
