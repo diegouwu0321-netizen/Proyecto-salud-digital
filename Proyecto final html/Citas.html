@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Agendar Cita</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="CSS/styles.css">
+</head>
+<body>
+    <nav class="sidebar" id="sidebar">
+        <div class="cerrar-btn" id="cerrarBtn">&times;</div>
+        <ul>
+            <li><a href="index.html">Inicio / Historia</a></li>
+            <li><a href="servicios.html">Servicios</a></li>
+            <li><a href="medicos.html">Nuestros Médicos</a></li>
+            <li><a href="archivo.html">Archivo Clínico</a></li>
+            <li><a href="citas.html"><b>Agendar Cita</b></a></li>
+        </ul>
+    </nav>
+
+    <header class="top-nav">
+        <div class="menu-btn" id="menuBtn">&#9776;</div>
+        <div class="logo">SALUD<b>DIGITAL</b></div>
+    </header>
+
+    <main class="main-content">
+        <h1>Agendar Nueva Cita</h1>
+        <div class="card">
+            <h3>Formulario de Registro (Método POST)</h3>
+            <form action="#" method="POST">
+                <label>Especialidad:</label>
+                <select style="width:100%; padding:10px; margin-bottom:20px;">
+                    <option>Laboratorio Clínico</option>
+                    <option>Cardiología</option>
+                    <option>Optometría</option>
+                </select>
+                
+                <label>Fecha Sugerida:</label>
+                <input type="date" style="width:100%; padding:10px; margin-bottom:20px;">
+                
+                <button type="submit" class="btn-slide" style="width:100%;">Agendar vía POST</button>
+            </form>
+        </div>
+
+        <div class="card" style="margin-top: 30px; background-color: #f9f9f9;">
+            <h3>Consulta de Estatus (Método GET)</h3>
+            <form action="#" method="GET">
+                <label>Número de Folio:</label>
+                <input type="text" name="folio" style="width:100%; padding:10px; margin-bottom:20px;">
+                <button type="submit" style="width:100%; padding:10px; background:#666; color:white; border:none; border-radius:20px;">Consultar vía GET</button>
+            </form>
+        </div>
+    </main>
+    <script src="script.js"></script>
+</body>
+</html>

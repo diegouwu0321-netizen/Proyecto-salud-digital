@@ -8,7 +8,7 @@
 </head>
 <body>
     <nav class="sidebar" id="sidebar">
-        <div class="cerrar-btn" onclick="toggleMenu()">&times;</div>
+        <div class="cerrar-btn" id="cerrarBtn" onclick="toggleMenu()">&times;</div>
         <ul>
             <li><a href="index.html"><b>Inicio / Historia</b></a></li>
             <li><a href="servicios.html">Servicios</a></li>
@@ -19,7 +19,7 @@
     </nav>
 
     <header class="top-nav">
-        <div class="menu-btn" onclick="toggleMenu()">&#9776;</div>
+        <div class="menu-btn" id="menuBtn" onclick="toggleMenu()">&#9776;</div>
         <div class="logo">SALUD<b>DIGITAL</b></div>
     </header>
 
@@ -30,7 +30,7 @@
                     <h2>¡Bienvenido a Salud Digital!</h2>
                     <p>Tecnología avanzada para el cuidado de tu familia.</p>
                 </div>
-                <div class="slide" style="background: var(--verde-primario); color: white;">
+                <div class="slide" style="background: #006039; color: white;">
                     <h2>Excelencia Médica</h2>
                     <p>Más de 15 años brindando diagnósticos certeros.</p>
                 </div>
@@ -39,19 +39,51 @@
 
         <section class="section-text">
             <h2>Nuestra Institución</h2>
-            <p><b>Historia:</b> Fundada en 2010 por un grupo de médicos visionarios, Salud Digital nació con el objetivo de integrar la tecnología de punta en los procesos clínicos tradicionales para reducir tiempos de espera y aumentar la precisión.</p>
+            <p><b>Historia:</b> Fundada en 2010 por un grupo de médicos visionarios, Salud Digital nació con el objetivo de integrar la tecnología de punta en los procesos clínicos tradicionales.</p>
             <p><b>Misión:</b> Brindar servicios de salud integrales con calidez, eficiencia y accesibilidad económica.</p>
-            <p><b>Visión:</b> Ser la red de clínicas digitales más confiable del país, liderando la innovación médica.</p>
+            <p><b>Visión:</b> Ser la red de clínicas digitales más confiable del país.</p>
+        </section>
+
+        <section class="servicios-grid">
+            <h2>Nuestros Servicios Especializados</h2>
+            <div class="contenedor-tarjetas">
+                <div class="tarjeta">
+                    <h3>Laboratorio Clínico</h3>
+                    <p>Tecnología de punta para resultados precisos en tiempo récord.</p>
+                </div>
+                <div class="tarjeta">
+                    <h3>Imagenología</h3>
+                    <p>Rayos X, Ultrasonidos y Tomografías con interpretación inmediata.</p>
+                </div>
+                <div class="tarjeta">
+                    <h3>Check-ups</h3>
+                    <p>Paquetes preventivos diseñados para cada etapa de tu vida.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="info-extra">
+            <h2>Cuidar tu salud nunca fue tan fácil</h2>
+            <p>En nuestro portal de salud, nos comprometemos a brindarte la mejor atención.</p>
         </section>
     </main>
 
-    <script>
-        function toggleMenu() { document.getElementById('sidebar').classList.toggle('active'); }
-        let i = 0;
-        setInterval(() => {
-            i = (i === 0) ? 100 : 0;
-            document.getElementById('trackInicio').style.transform = `translateX(-${i}%)`;
-        }, 4000);
-    </script>
+    <footer class="pie-pagina">
+        <div class="footer-contenido">
+            <div class="footer-info">
+                <h3>Salud Digital</h3>
+                <p>Tu bienestar, nuestra prioridad.</p>
+            </div>
+            <div class="footer-links">
+                <h4>Enlaces</h4>
+                <a href="index.html">Inicio</a>
+                <a href="Servicios.html">Servicios</a>
+                <a href="Citas.html">Citas</a>
+            </div>
+        </div>
+        <p class="copyright">&copy; 2026 Portal de Salud Digital</p>
+    </footer>
+
+    <script src="Javascript/script.js"></script>
 </body>
 </html>

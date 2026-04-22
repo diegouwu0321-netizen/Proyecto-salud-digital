@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Archivo Clínico</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="CSS/styles.css">
+</head>
+<body>
+    <nav class="sidebar" id="sidebar">
+        <div class="cerrar-btn" id="cerrarBtn">&times;</div>
+        <ul>
+            <li><a href="index.html">Inicio / Historia</a></li>
+            <li><a href="servicios.html">Servicios</a></li>
+            <li><a href="medicos.html">Nuestros Médicos</a></li>
+            <li><a href="archivo.html"><b>Archivo Clínico</b></a></li>
+            <li><a href="citas.html">Agendar Cita</a></li>
+        </ul>
+    </nav>
+
+    <header class="top-nav">
+        <div class="menu-btn" id="menuBtn">&#9776;</div>
+        <div class="logo">SALUD<b>DIGITAL</b></div>
+    </header>
+
+    <main class="main-content">
+        <h1>Generación de Expediente Clínico</h1>
+        <div class="card">
+            <p><i>Nota: Este apartado es únicamente informativo.</i></p>
+            <form>
+                <label>Nombre Completo:</label>
+                <input type="text" style="width:100%; padding:10px; margin-bottom:20px; border:1px solid #ddd; border-radius:5px;">
+                
+                <label>Número de Seguridad Social:</label>
+                <input type="number" style="width:100%; padding:10px; margin-bottom:20px; border:1px solid #ddd; border-radius:5px;">
+                
+                <label>Antecedentes Heredofamiliares:</label>
+                <textarea style="width:100%; padding:10px; height:100px; margin-bottom:20px; border:1px solid #ddd; border-radius:5px;"></textarea>
+                
+                <button type="button" onclick="alert('Generando archivo PDF simulado...')" class="btn-slide" style="width:100%;">Generar Expediente</button>
+            </form>
+        </div>
+    </main>
+    <script src="script.js"></script>
+</body>
+</html>
