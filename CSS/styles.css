@@ -164,12 +164,11 @@ body {
     margin-top: 30px;
 }
 
-.tarjeta {
-    background: white;
-    padding: 20px;
-    border-radius: 10px;
-    width: 280px;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+.tarjeta-servicio i {
+    font-size: 3rem; /* Esto les da el tamaño */
+    color: #006039;  /* Esto les da tu color verde */
+    margin-bottom: 20px;
+    display: block;
 }
 
 .info-extra {
@@ -234,7 +233,8 @@ section {
     width: 100%;
     display: flex;
     flex-direction: column;
-    align-items: flex-start; /* Fuerza a que todo lo de adentro empiece a la izquierda */
+    align-items: center; 
+    text-align: center;
 }
 /* Esto afectará a TODOS los títulos de nivel 2 y 3 dentro de las secciones */
 section h2, 
@@ -267,8 +267,471 @@ section h3,
     margin-top: 30px !important;
     padding-left: 0 !important;     /* Asegura que empiece desde el borde */
 }
+section {
+    scroll-margin-top: 80px; /* Esto evita que el menú tape el título al hacer clic */
+}
 /* Fondo alternado para que se vea el cambio al bajar */
 #inicio { background: linear-gradient(135deg, #f9f9f9 0%, #e0e0e0 100%); }
 #servicios { background: #ffffff; }
 #medicos { background: #f4fbf9; } /* Un verde muy clarito médico */
 #citas { background: #ffffff; }
+/* --- PEGA ESTO AL FINAL DE styles.css --- */
+.servicios-seccion {
+    padding: 80px 20px;
+    background-color: #f4f7f6; /* Un gris muy claro para diferenciarlo */
+    text-align: center;
+}
+
+.servicios-contenedor {
+    display: flex;
+    gap: 20px;
+    overflow-x: auto; /* Esto crea el carrusel en móvil */
+    padding: 20px 10px;
+    scroll-behavior: smooth;
+}
+
+/* Para que las tarjetas se vean como cuadros blancos elegantes */
+.tarjeta-servicio {
+    min-width: 260px;
+    background: white;
+    padding: 25px;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    border-top: 5px solid #006039; /* Tu verde institucional */
+}
+
+.tarjeta-servicio i {
+    font-size: 2.5rem;
+    color: #006039;
+    margin-bottom: 15px;
+}
+/* Oculta la barra de scroll fea en PC */
+.servicios-contenedor::-webkit-scrollbar {
+    display: none;
+}
+.carrusel-servicios {
+    width: 100%;
+    height: 400px;
+    overflow: hidden;
+    border-radius: 20px;
+    margin-bottom: 50px; /* Espacio para que no choque con el panal */
+    position: relative;
+    cursor: grab;
+}
+.carrusel-track {
+    display: flex;
+    height: 100%;
+}
+
+.carrusel-servicios:active {
+    cursor: grabbing; /* Mano cerrada al hacer clic */
+}
+
+.carrusel-servicios img {
+    pointer-events: none; /* Importante: permite que el clic pase al contenedor */
+    user-select: none;
+}
+.slide {
+    min-width: 100%;
+    height: 100%;
+}
+.slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    pointer-events: none; /* Importante para el drag */
+}
+.contenedor-panal {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-bottom: 50px;
+}
+
+.fila-panal {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+/* Desfase para la segunda fila para que encaje como panal */
+.fila-panal:nth-child(even) {
+    margin-top: -30px; /* Ajusta esto según el tamaño de tus cuadros */
+}
+.fila-intercalada {
+    margin-top: -65px; /* Ajuste para que los hexágonos encajen */
+}
+
+.item-panal {
+    width: 220px;
+    height: 220px;
+    background: white;
+    border: 1px solid #e0e0e0;
+    border-radius: 20px; /* Puedes hacerlo hexágono con clip-path, pero redondeado es más limpio */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 20px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    transition: transform 0.3s ease;
+}
+
+.item-panal:hover {
+    transform: translateY(-10px) scale(1.05);
+    border-color: #006039;
+    z-index: 10;
+}
+
+.item-panal i {
+    font-size: 2.5rem;
+    color: #006039;
+    margin-bottom: 10px;
+}
+
+.item-panal h3 {
+    font-size: 1.1rem;
+    color: #006039;
+    margin: 5px 0;
+    font-weight: bold;
+}
+
+.item-panal p {
+    font-size: 0.85rem;
+    color: #666;
+}
+/* --- ESTILOS DEL PANAL HEXAGONAL --- */
+
+.servicios-section {
+    padding: 60px 20px;
+    text-align: center;
+    background-color: #f9f9f9; /* Color de fondo suave opcional */
+}
+
+.servicios-section h1 {
+    font-size: 2.5rem;
+    color: #333;
+    margin-bottom: 50px;
+}
+
+.contenedor-panal {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* Ajusta el gap negativo para que los hexágonos de distintas filas se toquen verticalmente */
+    gap: -25px; 
+}
+
+.fila-panal {
+    display: flex;
+    justify-content: center;
+    /* Ajusta el gap negativo para que los hexágonos de la misma fila se toquen horizontalmente */
+    gap: -15px; 
+}
+
+/* Esta clase crea el efecto de panal intercalado */
+.fila-intercalada {
+    margin-top: -55px; /* Sube la segunda fila para que encaje */
+}
+
+/* El Hexágono en sí */
+.hexagono {
+    width: 220px;
+    height: 250px;
+    background: white;
+    clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    transition: 0.3s;
+    border: 1px solid #eee;
+}
+
+/* Efecto al pasar el mouse */
+.hexagono:hover {
+    transform: scale(1.1);
+    background: #f0fff4;
+    z-index: 10;
+}
+
+/* Contenedor del texto dentro del hexágono */
+.contenido-hexagono {
+    text-align: center;
+    padding: 20px;
+    width: 80%; /* Para que el texto no toque los bordes del hexágono */
+}
+
+/* Iconos */
+.contenido-hexagono i {
+    font-size: 3rem;
+    color: #006039; /* Tu color verde */
+    margin-bottom: 15px;
+}
+
+/* Títulos de los servicios */
+.contenido-hexagono h3 {
+    color: #006039;
+    font-size: 1rem;
+    text-transform: uppercase;
+}
+
+/* Descripción */
+.contenido-hexagono p {
+    font-size: 0.9rem;
+    color: #666;
+    line-height: 1.4;
+}
+
+/* --- Adaptación para Móviles --- */
+@media (max-width: 768px) {
+    .contenedor-panal {
+        gap: 20px; /* Espaciado normal en móvil */
+    }
+    .fila-panal {
+        flex-direction: column;
+        gap: 20px;
+    }
+    .fila-intercalada {
+        margin-top: 0;
+    }
+    .hexagono {
+        width: 200px;
+        height: 230px;
+    }
+    .contenido-hexagono i {
+        font-size: 2.5rem;
+    }
+    .contenido-hexagono h3 {
+        font-size: 1rem;
+    }
+}
+.especialistas-section {
+    padding: 60px 20px;
+    text-align: center;
+}
+
+.grid-especialistas {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding-top: 40px;
+}
+
+.tarjeta-medico {
+    background: #fff;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    transition: all 0.3s ease;
+    border-bottom: 5px solid #006039; /* Detalle verde al fondo */
+}
+
+.contenedor-foto {
+    width: 100%;
+    height: 250px;
+    background: #e9ecef; /* Color gris por si no hay imagen */
+    overflow: hidden;
+}
+
+.foto-perfil {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.info-medico {
+    padding: 20px;
+}
+
+.info-medico h3 {
+    color: #333;
+    margin-bottom: 5px;
+}
+
+.especialidad {
+    color: #006039;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+/* --- LOGICA DEL HOVER --- */
+.detalle-hover {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.5s ease, opacity 0.5s ease;
+    opacity: 0;
+    text-align: left;
+    font-size: 0.9rem;
+    border-top: 1px solid #eee;
+    padding-top: 10px;
+}
+
+.tarjeta-medico:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+}
+
+.tarjeta-medico:hover .detalle-hover {
+    max-height: 200px; /* Se expande */
+    opacity: 1;
+}
+
+.detalle-hover p {
+    margin: 5px 0;
+    color: #666;
+}
+
+.detalle-hover strong {
+    color: #333;
+}
+.contenedor-foto {
+    width: 100%;
+    height: 350px; /* Aumentamos de 250px a 350px para ver más a la persona */
+    overflow: hidden;
+}
+.foto-perfil {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: top; /* Enfoca la parte de arriba (la cabeza) en lugar del centro */
+}
+
+/* Esto centra todo el contenido y evita que toque los bordes del navegador */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Mejora para la sección de Institución para que no se vea amontonada */
+.section-text {
+    padding: 60px 0;
+    text-align: left;
+}
+
+.section-text h2 {
+    color: #006039;
+    margin-bottom: 20px;
+    border-left: 5px solid #006039;
+    padding-left: 15px;
+}
+
+.section-text p {
+    margin-bottom: 15px;
+    line-height: 1.6;
+}
+/* --- SECCIÓN DUAL GESTIÓN --- */
+.seccion-dual-gestion {
+    display: grid;
+    grid-template-columns: 1fr 1.5fr; /* Cita a la izquierda, Expediente (más ancho) a la derecha */
+    gap: 30px;
+    padding: 60px 0;
+    align-items: start;
+}
+
+/* Estilo Cita (Blanco y Verde) */
+.caja-cita {
+    background: white;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+    border-top: 5px solid #006039;
+}
+
+.caja-cita h2 { color: #006039; margin-bottom: 15px; }
+
+.caja-cita input, .caja-cita select, .caja-cita textarea {
+    width: 100%;
+    margin-bottom: 12px;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+}
+
+.btn-enviar-cita {
+    background: #006039;
+    color: white;
+    border: none;
+    padding: 12px;
+    width: 100%;
+    border-radius: 6px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+/* Estilo Expediente (Basado en tu imagen) */
+.sistema-expediente {
+    background: white;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+.header-azul {
+    background: #0d2c5e; /* Azul marino de tu imagen */
+    color: white;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.header-azul i { font-size: 2.5rem; }
+.header-azul h3 { margin: 0; font-size: 1.2rem; }
+.header-azul p { margin: 0; font-size: 0.8rem; opacity: 0.8; }
+
+.contenido-expediente { padding: 25px; }
+
+/* Pestañas */
+.tabs-sistema {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 25px;
+    flex-wrap: wrap;
+}
+
+.tab-azul {
+    background: #0d2c5e;
+    color: white;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 4px;
+    font-size: 0.8rem;
+    cursor: pointer;
+}
+
+.tab-azul.active { background: #1a4a8e; }
+
+/* Formulario Expediente */
+.inputs-sistema {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+}
+
+.campo { display: flex; flex-direction: column; gap: 5px; }
+.campo label { font-size: 0.8rem; font-weight: bold; color: #555; }
+.campo input { padding: 10px; border: 1px solid #ccc; border-radius: 4px; }
+
+.btn-guardar-verde {
+    grid-column: span 2;
+    background: #008000; /* Verde de tu imagen */
+    color: white;
+    border: none;
+    padding: 15px;
+    border-radius: 6px;
+    font-weight: bold;
+    font-size: 1rem;
+    margin-top: 10px;
+    cursor: pointer;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+    .seccion-dual-gestion { grid-template-columns: 1fr; }
+    .inputs-sistema { grid-template-columns: 1fr; }
+}

@@ -13,8 +13,8 @@
         <ul>
             <li><a href="#inicio" onclick="toggleMenu()"><b>Inicio / Historia</b></a></li>
             <li><a href="#servicios" onclick="toggleMenu()">Servicios</a></li>
-            <li><a href="#medicos" onclick="toggleMenu()">Nuestros Médicos</a></li>
-            <li><a href="#citas" onclick="toggleMenu()">Agendar Cita</a></li>
+            <li><a href="#especialistas" onclick="toggleMenu()">Nuestros Médicos</a></li>
+            <li><a href="#gestion-pacientes" onclick="toggleMenu()">Agendar Cita</a></li>
         </ul>
     </nav>
 
@@ -24,61 +24,254 @@
     </header>
 
     <main class="main-content">
+    <div class="container"> 
+
         <section id="inicio" class="carrusel">
-            <div class="carrusel-track" id="trackInicio">
-                <div class="slide">
-                    <h2>¡Bienvenido a Salud Digital!</h2>
-                    <p>Tecnología avanzada para el cuidado de tu familia.</p>
-                </div>
-                <div class="slide" style="background: #006039; color: white;">
-                    <h2>Excelencia Médica</h2>
-                    <p>Más de 15 años brindando diagnósticos certeros.</p>
+            <div class="carrusel" id="carruselInicioContenedor"> 
+                <div class="carrusel-track" id="trackInicio">
+                    <div class="slide">
+                        <h2>¡Bienvenido a Salud Digital!</h2>
+                        <p>Tecnología avanzada para el cuidado de tu familia.</p>
+                    </div>
+                    <div class="slide" style="background: #006039; color: white;">
+                        <h2 class="titulo-carrusel">EXCELENCIA MÉDICA</h2>
+                        <p>Más de 15 años brindando diagnósticos certeros.</p>
+                    </div>
                 </div>
             </div>
         </section>
 
-        <section class="section-text">
+        <section id="institucion" class="section-text">
             <h2>Nuestra Institución</h2>
-            <p><b>Historia:</b> Fundada en 2010 por un grupo de médicos visionarios, Salud Digital nació con el objetivo de integrar la tecnología de punta en los procesos clínicos tradicionales.</p>
-            <p><b>Misión:</b> Brindar servicios de salud integrales con calidez, eficiencia y accesibilidad económica.</p>
-            <p><b>Visión:</b> Ser la red de clínicas digitales más confiable del país.</p>
+            <div class="grid-institucion">
+                <p><b>Historia:</b> Fundada en 2010 por un grupo de médicos visionarios, Salud Digital nació con el objetivo de integrar la tecnología de punta en los procesos clínicos tradicionales.</p>
+                <p><b>Misión:</b> Brindar servicios de salud integrales con calidez, eficiencia y accesibilidad económica.</p>
+                <p><b>Visión:</b> Ser la red de clínicas digitales más confiable del país.</p>
+            </div>
         </section>
 
-        <section id="servicios" class="servicios-grid">
-            <h2>Nuestros Servicios Especializados</h2>
-            <div class="contenedor-tarjetas">
-                <div class="tarjeta">
-                    <h3>Laboratorio Clínico</h3>
-                    <p>Tecnología de punta para resultados precisos en tiempo récord.</p>
+        <section id="servicios" class="servicios-section">
+            <h1>Servicios Médicos de Vanguardia</h1>
+            <div class="carrusel-servicios" id="contenedorCarrusel">
+                <div class="carrusel-track" id="trackServiciosImagenes">
+                    <div class="slide"><img src="https://images.unsplash.com/photo-1581594693702-fbdc51b2763b?auto=format&fit=crop&w=1200&q=80"></div>
+                    <div class="slide"><img src="https://images.unsplash.com/photo-1516549655169-df83a0774514?auto=format&fit=crop&w=1200&q=80"></div>
+                    <div class="slide"><img src="https://images.unsplash.com/photo-1579154204601-01588f351e67?auto=format&fit=crop&w=1200&q=80"></div>
+                    <div class="slide"><img src="https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?auto=format&fit=crop&w=1200&q=80"></div>
+                    <div class="slide"><img src="https://images.unsplash.com/photo-1581594693702-fbdc51b2763b?auto=format&fit=crop&w=1200&q=80"></div>
+                    <div class="slide"><img src="https://images.unsplash.com/photo-1581594693702-fbdc51b2763b?auto=format&fit=crop&w=1200&q=80"></div>
                 </div>
-                <div class="tarjeta">
-                    <h3>Imagenología</h3>
-                    <p>Rayos X, Ultrasonidos y Tomografías con interpretación inmediata.</p>
+            </div>
+
+            <div class="contenedor-panal">
+                <div class="fila-panal">
+                    <div class="hexagono">
+                        <div class="contenido-hexagono">
+                            <i class="fas fa-flask"></i>
+                            <h3>Laboratorio</h3>
+                            <p>Análisis clínicos completos.</p>
+                        </div>
+                    </div>
+                    <div class="hexagono">
+                        <div class="contenido-hexagono">
+                            <i class="fas fa-bone"></i>
+                            <h3>Rayos X</h3>
+                            <p>Radiografías digitales.</p>
+                        </div>
+                    </div>
+                    <div class="hexagono">
+                        <div class="contenido-hexagono">
+                            <i class="fas fa-baby"></i>
+                            <h3>Ultrasonido</h3>
+                            <p>Estudios especializados.</p>
+                        </div>
+                    </div>
                 </div>
-                <div class="tarjeta">
-                    <h3>Check-ups</h3>
-                    <p>Paquetes preventivos diseñados para cada etapa de tu vida.</p>
+
+                <div class="fila-panal fila-intercalada">
+                    <div class="hexagono">
+                        <div class="contenido-hexagono">
+                            <i class="fas fa-video"></i>
+                            <h3>Telemedicina</h3>
+                            <p>Consultas virtuales.</p>
+                        </div>
+                    </div>
+                    <div class="hexagono">
+                        <div class="contenido-hexagono">
+                            <i class="fas fa-pills"></i>
+                            <h3>Farmacia</h3>
+                            <p>Surtido de recetas.</p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
 
-        <section id="medicos" style="padding: 100px 20px;">
-            <h2>Nuestros Especialistas</h2>
-            <div class="card-doctor">
-                <p>Aquí debes pegar los cuadros de los médicos que tenías en medicos.html</p>
+        <section id="especialistas" class="especialistas-section">
+    <h1>Nuestros Especialistas</h1>
+    <div class="grid-especialistas">
+        
+        <div class="tarjeta-medico">
+            <div class="contenedor-foto">
+                <img src="IMG/dr%20roberto%20gomez.webp" alt="Dr. Roberto Gómez" class="foto-perfil">
             </div>
-        </section>
+            <div class="info-medico">
+                <h3>Dr. Roberto Gómez</h3>
+                <p class="especialidad">Cardiología Clínica</p>
+                <div class="detalle-hover">
+                    <p><strong>Carrera:</strong> UNAM</p>
+                    <p><strong>Especialización:</strong> Instituto Nacional de Cardiología</p>
+                    <p><strong>Experiencia:</strong> 15 años</p>
+                </div>
+            </div>
+        </div>
 
-        <section id="citas" style="padding: 100px 20px;">
-            <h2>Agendar Cita</h2>
-            <p>Aquí debes pegar el formulario que tenías en citas.html</p>
-        </section>
+        <div class="tarjeta-medico">
+            <div class="contenedor-foto">
+                <img src="IMG/dra%20elena%20torres.jpg" alt="Dra. Elena Torres" class="foto-perfil">
+            </div>
+            <div class="info-medico">
+                <h3>Dra. Elena Torres</h3>
+                <p class="especialidad">Pediatría y Neonatología</p>
+                <div class="detalle-hover">
+                    <p><strong>Carrera:</strong> Tecnológico de Monterrey</p>
+                    <p><strong>Especialización:</strong> Hospital Infantil de México</p>
+                    <p><strong>Experiencia:</strong> 10 años</p>
+                </div>
+            </div>
+        </div>
 
-        <section class="info-extra">
-            <h2>Cuidar tu salud nunca fue tan fácil</h2>
-            <p>En nuestro portal de salud, nos comprometemos a brindarte la mejor atención.</p>
-        </section>
-    </main>
+        <div class="tarjeta-medico">
+            <div class="contenedor-foto">
+                <img src="IMG/dr%20carlos%20ruiz.jpg" alt="Dr. Carlos Ruiz" class="foto-perfil">
+            </div>
+            <div class="info-medico">
+                <h3>Dr. Carlos Ruiz</h3>
+                <p class="especialidad">Ortopedia y Traumatología</p>
+                <div class="detalle-hover">
+                    <p><strong>Carrera:</strong> Universidad Anáhuac</p>
+                    <p><strong>Especialización:</strong> Hospital Oxford, UK</p>
+                    <p><strong>Experiencia:</strong> 12 años</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="tarjeta-medico">
+            <div class="contenedor-foto">
+                <img src="IMG/dra%20sofia%20luna.webp" alt="Dra. Sofía Luna" class="foto-perfil">
+            </div>
+            <div class="info-medico">
+                <h3>Dra. Sofía Luna</h3>
+                <p class="especialidad">Dermatología Médica</p>
+                <div class="detalle-hover">
+                    <p><strong>Carrera:</strong> IPN (ESM)</p>
+                    <p><strong>Especialización:</strong> Centro Dermatológico Pascua</p>
+                    <p><strong>Experiencia:</strong> 8 años</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="tarjeta-medico">
+            <div class="contenedor-foto">
+                <img src="IMG/dr%20miguel%20angel.jpg" alt="Dr. Miguel Ángel" class="foto-perfil">
+            </div>
+            <div class="info-medico">
+                <h3>Dr. Miguel Ángel</h3>
+                <p class="especialidad">Neurocirugía</p>
+                <div class="detalle-hover">
+                    <p><strong>Carrera:</strong> Universidad de Guadalajara</p>
+                    <p><strong>Especialización:</strong> Johns Hopkins University</p>
+                    <p><strong>Experiencia:</strong> 20 años</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="tarjeta-medico">
+            <div class="contenedor-foto">
+                <img src="IMG/dra%20laura%20mendez.webp" alt="Dra. Laura Méndez" class="foto-perfil">
+            </div>
+            <div class="info-medico">
+                <h3>Dra. Laura Méndez</h3>
+                <p class="especialidad">Ginecología y Obstetricia</p>
+                <div class="detalle-hover">
+                    <p><strong>Carrera:</strong> Universidad La Salle</p>
+                    <p><strong>Especialización:</strong> Hospital Ángeles</p>
+                    <p><strong>Experiencia:</strong> 14 años</p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+        <section id="gestion-pacientes" class="seccion-dual-gestion">
+    
+    <div class="columna-cita">
+        <div class="caja-cita">
+            <h2><i class="fas fa-calendar-alt"></i> Agendar Cita</h2>
+            <p>Reserva tu espacio con nuestros especialistas.</p>
+            <form id="formCitaReal">
+                <input type="text" placeholder="Nombre del Paciente" required>
+                <input type="tel" placeholder="Teléfono de contacto" required>
+                <select required>
+                    <option value="">Seleccione Especialidad</option>
+                    <option>Cardiología</option>
+                    <option>Pediatría</option>
+                    <option>Ortopedia</option>
+                    <option>Dermatología</option>
+                    <option>Neurocirugía</option>
+                </select>
+                <input type="date" required>
+                <textarea placeholder="Motivo de la consulta..." rows="3"></textarea>
+                <button type="submit" class="btn-enviar-cita">Solicitar Cita</button>
+            </form>
+        </div>
+    </div>
+
+    <div class="columna-expediente">
+        <div class="sistema-expediente">
+            <div class="header-azul">
+                <i class="fas fa-file-medical"></i>
+                <div>
+                    <h3>Sistema de Expediente Clínico Digital</h3>
+                    <p>Registro y control integral de información médica del paciente</p>
+                </div>
+            </div>
+            
+            <div class="contenido-expediente">
+                <div class="tabs-sistema">
+                    <button class="tab-azul active">Datos Generales</button>
+                    <button class="tab-azul">Responsable</button>
+                    <button class="tab-azul">Localización</button>
+                    <button class="tab-azul">Diagnóstico</button>
+                </div>
+
+                <div class="inputs-sistema">
+                    <div class="campo">
+                        <label>Nombre completo</label>
+                        <input type="text" placeholder="Escriba el nombre...">
+                    </div>
+                    <div class="campo">
+                        <label>Edad</label>
+                        <input type="number" placeholder="0">
+                    </div>
+                    <div class="campo">
+                        <label>Fecha</label>
+                        <input type="date">
+                    </div>
+                    <div class="campo">
+                        <label>Número de expediente</label>
+                        <input type="text" placeholder="EXP-2024-XXXX">
+                    </div>
+                    
+                    <button type="button" class="btn-guardar-verde">Guardar Expediente</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+    </div> </main>
 
     <footer class="pie-pagina">
         <div class="footer-contenido">
