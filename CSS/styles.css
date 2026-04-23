@@ -1,3 +1,6 @@
+html {
+    scroll-behavior: smooth;
+}
 :root {
     --verde-primario: #006039;
     --verde-suave: #e8f5e9;
@@ -73,17 +76,19 @@ body {
     cursor: pointer;
 }
 
-/* Contenido General */
-.main-content { padding: 40px; max-width: 1200px; margin: auto; }
+.main-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px 60px; /* Esto separa el texto de los bordes izquierdo y derecho */
+    transition: all 0.3s ease; /* Esta línea hace que el movimiento sea suave */
+    width: 100%;
+}
 
 /* Carruseles */
 .carrusel {
-    width: 100%;
-    height: 300px;
+    height: 350px;     /* Esta es una altura mucho más cómoda */
     overflow: hidden;
-    border-radius: 20px;
-    position: relative;
-    background: var(--verde-suave);
+    border-radius: 12px;
     margin-bottom: 30px;
 }
 
@@ -201,3 +206,69 @@ body {
     border-top: 1px solid #555;
     padding-top: 10px;
 }
+/* 1. Eliminar márgenes fantasma de todo el sitio */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* 2. Maximizar el contenedor principal */
+body {
+    width: 100%;
+    overflow-x: hidden; /* Evita que la página se mueva de lado */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* 3. Hacer que las secciones ocupen todo el ancho */
+.main-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px 0%; /* El 5% ayuda a que nada toque la orilla */
+    box-sizing: border-box; 
+    width: 100%;
+}
+
+section {
+    padding: 60px 0;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; /* Fuerza a que todo lo de adentro empiece a la izquierda */
+}
+/* Esto afectará a TODOS los títulos de nivel 2 y 3 dentro de las secciones */
+section h2, 
+section h3, 
+.titulo-seccion,
+.servicios-grid h2 { /* Añadimos esto para ganarle al centrado viejo */
+    margin-bottom: 25px !important;
+    color: #006039 !important;
+    font-size: 2.2rem !important;
+    text-transform: uppercase !important; /* MAYÚSCULAS */
+    font-family: 'Segoe UI', Arial, sans-serif !important;
+    font-weight: bold !important;
+    text-align: left !important; /* IZQUIERDA */
+    display: block !important;
+    width: 100% !important;
+}
+.servicios-grid {
+    padding: 60px 0;
+    background-color: #f4f4f4;
+    text-align: left; /* Cambiamos de center a left */
+}
+.titulo-verde-izq {
+    color: #006039 !important;      /* El verde de tu logo */
+    text-align: left !important;    /* Alineado a la izquierda */
+    text-transform: uppercase !important; /* Mayúsculas */
+    font-size: 2.2rem !important;
+    font-weight: bold !important;
+    display: block !important;
+    margin-bottom: 25px !important;
+    margin-top: 30px !important;
+    padding-left: 0 !important;     /* Asegura que empiece desde el borde */
+}
+/* Fondo alternado para que se vea el cambio al bajar */
+#inicio { background: linear-gradient(135deg, #f9f9f9 0%, #e0e0e0 100%); }
+#servicios { background: #ffffff; }
+#medicos { background: #f4fbf9; } /* Un verde muy clarito médico */
+#citas { background: #ffffff; }

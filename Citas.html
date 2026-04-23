@@ -49,10 +49,10 @@
         </ul>
     </nav>
 
-    <header class="top-nav">
-        <div class="menu-btn" onclick="toggleMenu()">&#9776;</div>
-        <div class="logo">SALUD<b>DIGITAL</b></div>
-    </header>
+<header class="top-nav">
+    <div class="menu-btn" id="menuBtn" onclick="toggleMenu()">&#9776;</div>
+    <a href="index.html" class="logo">SALUD<b>DIGITAL</b></a>
+</header>
 
     <main class="main-content">
         <h1>Gestión de Citas Médicas</h1>
@@ -93,13 +93,7 @@
     </main>
 
     <script>
-        function toggleMenu() { document.getElementById('sidebar').classList.toggle('active'); }
-        
-        function toggleCitas() {
-            const area = document.getElementById('areaCitas');
-            area.style.display = (area.style.display === 'block') ? 'none' : 'block';
-            if(area.style.display === 'block') window.scrollBy(0, 300);
-        }
+
     </script>
 </body>
 </html>
